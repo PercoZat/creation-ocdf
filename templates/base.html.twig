@@ -1,0 +1,84 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>{% block title %}OCDF{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+        {% endblock %}
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="{{ path('home') }}">OCDF</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ path('home') }}">Accueil<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">L'association</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Conception web</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Demander un devis</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('contact') }}">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Se connecter</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        {% block flashes %}
+            <div class="container">
+                {% for type, messages in app.flashes %}
+                    {% for message in messages %}
+                        <div class="alert alert-{{ type }} alert-dismissible fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+            </div>
+        {% endblock %}
+        {% block body %}{% endblock %}
+        <footer class="footer">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-sm">
+                        <a class="text-black-50" href="">Nos réalisations</a>
+                    </div>
+                    <div class="col-sm">
+                        <a class="text-black-50" href="">Nos formations</a>
+                    </div>
+                    <div class="col-sm">
+                        <a class="text-black-50" href="">Recrutement</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm text-right">
+                        <a class="text-black-50" href="">Plan du site</a>
+                    </div>
+                    <div class="col-sm text-left">
+                        <a class="text-black-50" href="">Mentions légales</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        {% block javascripts %}
+            <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
+            <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+        {% endblock %}
+    </body>
+</html>
