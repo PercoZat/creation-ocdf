@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+{% block body %}
+    <h1>Pourquoi nous contactez-vous ?</h1>
+
+    <ul>
+        <li><a href="{{ path('contact_devis') }}">Demande de devis</a></li>
+        <li><a href="{{ path('contact_part') }}">Contact simple</a></li>
+        <li><a href="{{ path('contact_student') }}">Je veux être étudiant</a></li>
+        <li><a href="{{ path('contact_teacher') }}">Je veux être formateur</a></li>
+    </ul>
+{% endblock %}
+
+

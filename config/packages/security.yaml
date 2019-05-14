@@ -1,13 +1,46 @@
 security:
+    encoders:
+        App\Entity\AppUser:
+            algorithm: argon2i
+        App\Entity\Teacher:
+            algorithm: argon2i
+
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
-        in_memory: { memory: ~ }
+        # used to reload user from session & other features (e.g. switch_user)
+        app_user_provider:
+            entity:
+                class: App\Entity\AppUser
+                property: email
+        app_teacher_provider:
+            entity:
+                class: App\Entity\Teacher
+                property: email
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
+            pattern: ^/admin
+            provider: app_user_provider
             anonymous: true
+            guard:
+                authenticators:
+                    - App\Security\ODCFAuthAuthenticator
+            logout:
+                path: logout
+        teacher:
+            pattern: ^/
+            provider: app_teacher_provider
+            anonymous: true
+            guard:
+                authenticators:
+                    - App\Security\ODCFAuthAuthenticator
+            logout:
+                path: logout
+            form_login:
+                default_target_path: /formateur
+
 
             # activate different ways to authenticate
 

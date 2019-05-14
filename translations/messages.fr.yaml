@@ -1,0 +1,22 @@
+First name: Prénom
+Last name: Nom de famille
+Address: Adresse
+City: Ville
+Training: Formation
+Student: Etudiant
+Teacher: Formateur
+Title: Titre
+Started at: Date de début
+Finished at: Date de fin
+Duration: Durée
+Place: Lieu
+Have teacher: Formateur rattaché
+Is validated: Est-il validé ?
+Contact: Contact
+ID: id
+Email: Adresse email
+Telephone: Téléphone
+Company name: Nom de l'entreprise
+Content: Contenu
+Is done: Traité ?
+Get trainings str: Formation choisie

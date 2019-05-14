@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}
+
+{% endblock %}
+
+{% block body %}
+    <main class="container">
+        <h1 class="row justify-content-center">Devenir formateur</h1>
+
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Envoyer" class="btn btn-lg btn-primary btn-block">
+        {{ form_end(form) }}
+    </main>
+
+{% endblock %}
+
+

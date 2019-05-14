@@ -4,3 +4,22 @@ home:
 contact:
   path: /contact
   controller: App\Controller\Contact\ContactController::contact
+#Le precontact permet de sélectionner la demande de contact (etudiant, formateur, entreprise, ...)
+precontact:
+  path: /precontact
+  controller: App\Controller\Contact\ContactController::precontact
+#Je suis une entreprise : je veux un devis
+contact_devis:
+  path: /contact/devis
+  controller: App\Controller\Contact\ContactController::contactDevis
+#Je suis un particulier : je veux une info
+contact_part:
+  path: /contact/part
+  controller: App\Controller\Contact\ContactController::contactPart
+
+#Le postContact permet d'afficher une page de validation
+postcontact:
+  path: /postcontact
+  controller: App\Controller\Contact\ContactController::postcontact
+logout:
+  path: /logout

@@ -1,0 +1,3 @@
+contact_student:
+  path: /contact/etudiant
+  controller: App\Controller\StudentController::contactStudent

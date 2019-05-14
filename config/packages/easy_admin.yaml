@@ -1,0 +1,14 @@
+easy_admin:
+    entities:
+        Contact:
+            class: App\Entity\Contact
+            list:
+                fields: [companyName, content, isDone]
+        Training:
+            class: App\Entity\Training
+        Student:
+            class: App\Entity\Student
+            list:
+                fields: [isValidated, firstName, lastName, email, telephone, getTrainingsStr]
+        Teacher:
+            class: App\Entity\Teacher
